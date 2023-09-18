@@ -6,7 +6,7 @@ const content = document.querySelector("#content");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  content.classList.add("placeholder")
+  content.classList.add("placeholder");
 
   const videoURL = input.value;
 
@@ -26,7 +26,7 @@ form.addEventListener("submit", async (event) => {
   const summary = await server.post("/summary", {
     text: transcription.data.result,
   });
-  
+
   content.textContent = summary.data.result;
-  content.classList.remove("placeholder")
+  content.classList.remove("placeholder");
 });
